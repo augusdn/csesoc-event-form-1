@@ -2,20 +2,20 @@ import React from 'react'
 import { Input, Button, Select } from 'antd'
 import { withFormik }  from 'formik'
 import Yup from 'yup'
-import { 
+import {
 	constructEmailMarketing,
-	constructEmailSecretary, 
-	constructEmailArcDelegate, 
-	constructEmailTreasurer, 
-	constructEmailSocials, 
-	constructEmailOrganiser 
+	constructEmailSecretary,
+	constructEmailArcDelegate,
+	constructEmailTreasurer,
+	constructEmailSocials,
+	constructEmailOrganiser
 } from '../functions/EmailFunctions'
 import '../styles/MainForm.css'
 
 const { Option } = Select
 
 const MainForm = (props) => {
-	const { 
+	const {
 		values,
 		errors,
 		touched,
@@ -35,12 +35,12 @@ const MainForm = (props) => {
 				<h3>Organiser</h3>
 				<Input type="text" name="organiser" value={values.organiser} onChange={handleChange}/>
 				{touched.organiser && errors.organiser && <div className="error-text">{errors.organiser}</div>}
-			</div>	
+			</div>
 			<div className="form-input">
 				<h3>Organiser Email</h3>
 				<Input type="email" name="organiserEmail" value={values.organiserEmail} onChange={handleChange}/>
 				{touched.organiserEmail && errors.organiserEmail && <div className="error-text">{errors.organiserEmail}</div>}
-			</div>				
+			</div>
 			<div className="form-input">
 				<h3>Portfolio</h3>
 				<Select value={values.portfolio} onChange={(choice)=> setFieldValue('portfolio', choice)}>
@@ -161,13 +161,13 @@ export default withFormik({
 			cc = `${values.portfolio}.marketing@csesoc.org.au`
 		}
 		const finalDetails = Object.assign({}, values, {cc: cc})
-		
+
 		let emailData = []
 		emailData.push(constructEmailMarketing(finalDetails))
-		emailData.push(constructEmailSecretary(finalDetails)) 
-		emailData.push(constructEmailArcDelegate(finalDetails)) 
-		emailData.push(constructEmailTreasurer(finalDetails)) 
-		emailData.push(constructEmailSocials(finalDetails)) 
+		emailData.push(constructEmailSecretary(finalDetails))
+		emailData.push(constructEmailArcDelegate(finalDetails))
+		emailData.push(constructEmailTreasurer(finalDetails))
+		emailData.push(constructEmailSocials(finalDetails))
 		emailData.push(constructEmailOrganiser(finalDetails))
 		fetch('/api/send-emails', {
 			headers: {
