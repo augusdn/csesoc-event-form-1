@@ -1,16 +1,18 @@
 import React from 'react'
 import { Layout, Menu }from 'antd'
 import { Link } from 'react-router-dom'
+import logo from '../static/csesocwhiteblue.png'
 
 
-const {Sider } = Layout
 const Navbar = () => (
+
     <Menu
         theme="dark"
         mode="horizontal"
         // defaultSelectedKeys={['2']}
         style={{ lineHeight: '64px' , width: '100%'}}
     >
+        <Menu.Item><Link to='/'><img alt="CSESoc logo" src={logo}/></Link></Menu.Item>
         <Menu.Item><Link to='/'>Event-from</Link></Menu.Item>
         <Menu.Item><Link to='/calender'>Calender</Link></Menu.Item>
     </Menu>
