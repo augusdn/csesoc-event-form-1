@@ -13,8 +13,8 @@ const Navbar = () => (
         style={{ lineHeight: '64px' , width: '100%'}}
     >
         <Menu.Item><Link to='/'><img alt="CSESoc logo" src={logo}/></Link></Menu.Item>
-        <Menu.Item><Link to='/'>Event-from</Link></Menu.Item>
-        <Menu.Item><Link to='/calender'>Calender</Link></Menu.Item>
+        <Menu.Item><Link to='/'>Event-form</Link></Menu.Item>
+        <Menu.Item><Link to='/calendar'>Calendar</Link></Menu.Item>
     </Menu>
 
     // or a sider:
