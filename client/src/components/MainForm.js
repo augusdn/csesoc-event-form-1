@@ -153,13 +153,14 @@ export default withFormik({
 		location: Yup.string().required('Event location required'),
 	}),
 	handleSubmit(values, {resetForm}){
-		let cc = ''
+		// let cc = ''
+		let cc = 'yangqiwei97@gmail.com'
 
-		if (values.portfolio === 'education') {
-			cc = `marketing@csesoc.org.au`
-		} else {
-			cc = `${values.portfolio}.marketing@csesoc.org.au`
-		}
+		// if (values.portfolio === 'education') {
+		// 	cc = `marketing@csesoc.org.au`
+		// } else {
+		// 	cc = `${values.portfolio}.marketing@csesoc.org.au`
+		// }
 		const finalDetails = Object.assign({}, values, {cc: cc})
 
 		let emailData = []

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('client/build'));
 
 
-//catch-all that sends back the react app's index.html 
+//catch-all that sends back the react app's index.html
 // app.get('*', (req, res) => {
 // 	console.log(__dirname + '/client/build/index.html');
 // 	res.sendFile(path.join(__dirname, '/client/build/index.html'));
@@ -23,7 +23,8 @@ app.post('/api/send-emails/', (req, res) => {
 		service: 'gmail',
 		auth: {
 			user: 'events.form@csesoc.org.au',
-			pass: 'ninety9.60'
+			//pass: 'ninety9.60'
+			pass: 'Uq6Qm*Nj%q'
 		},
 	});
 
@@ -32,14 +33,14 @@ app.post('/api/send-emails/', (req, res) => {
 			from: 'CSESoc Events <events.form@csesoc.org.au>',
 			to: element.recipient,
 			subject: element.subject,
-			html: element.html 
+			html: element.html
 		};
-		
+
 		transporter.sendMail(mailOptions, (err, info) => {
 			if (err) {
 				console.log(err);
 			} else {
-				console.log(info); 
+				console.log(info);
 			}
 		});
 	})

@@ -1,11 +1,11 @@
 import React from 'react'
-import { renderEmail } from '../react-html-email' 
-import CustomEmail from '../components/CustomEmail' 
+import { renderEmail } from '../react-html-email'
+import CustomEmail from '../components/CustomEmail'
 
 export const constructEmailMarketing = (details) => {
 	const recipient = details.cc
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`MARKETING REQUEST: ${details.eventName}`}
 			eventName={details.eventName}
 			descrption={details.descrption}
@@ -37,9 +37,10 @@ export const constructEmailMarketing = (details) => {
 }
 
 export const constructEmailArcDelegate = (details) => {
-	const recipient = `cseoc.arcdelegate@cse.unsw.edu.au`
+	// const recipient = `cseoc.arcdelegate@cse.unsw.edu.au`
+	const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`ROOM BOOKING REQUEST: ${details.eventName}`}
 			eventName={details.eventName}
 			descrption={details.descrption}
@@ -68,9 +69,10 @@ export const constructEmailArcDelegate = (details) => {
 }
 
 export const constructEmailSecretary = (details) => {
-	const recipient = `secretary@csesoc.org.au`
+	// const recipient = `secretary@csesoc.org.au`
+	const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`NEW EVENT FOR SOC ANNOUNCE: ${details.eventName}`}
 			recipient={``}
 			eventName={details.eventName}
@@ -85,8 +87,8 @@ export const constructEmailSecretary = (details) => {
 			links={details.links}
 			notes={details.notesSecretary}
 			message={
-				`Make sure to confirm details with organising portfolio before constructing Soc Announce! 
-				There is a chance the event details have changed. 
+				`Make sure to confirm details with organising portfolio before constructing Soc Announce!
+				There is a chance the event details have changed.
 				Also, you may ask marketing for their event description if necessary.`}
 		/>
 	)
@@ -100,9 +102,10 @@ export const constructEmailSecretary = (details) => {
 }
 
 export const constructEmailTreasurer = (details) => {
-	const recipient = `treasurer@csesoc.org.au`
+	// const recipient = `treasurer@csesoc.org.au`
+	const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`NEW EVENT: ${details.eventName}`}
 			eventName={details.eventName}
 			descrption={details.descrption}
@@ -128,9 +131,10 @@ export const constructEmailTreasurer = (details) => {
 }
 
 export const constructEmailSocials = (details) => {
-	const recipient = `social.events@csesoc.org.au`
+	// const recipient = `social.events@csesoc.org.au`
+	const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`SHOPPING LIST FOR: ${details.eventName}`}
 			eventName={details.eventName}
 			descrption={details.descrption}
@@ -156,9 +160,10 @@ export const constructEmailSocials = (details) => {
 }
 
 export const constructEmailOrganiser = (details) => {
-	const recipient = details.organiserEmail
+	// const recipient = details.organiserEmail
+	const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
-		<CustomEmail 
+		<CustomEmail
 			title={`NEW EVENT: ${details.eventName}`}
 			eventName={details.eventName}
 			descrption={details.descrption}
