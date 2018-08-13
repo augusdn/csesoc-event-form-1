@@ -23,8 +23,7 @@ app.post('/api/send-emails/', (req, res) => {
 		service: 'gmail',
 		auth: {
 			user: 'events.form@csesoc.org.au',
-			//pass: 'ninety9.60'
-			pass: 'Uq6Qm*Nj%q'
+			pass: 'ninety9.60'
 		},
 	});
 
