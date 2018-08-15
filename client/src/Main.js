@@ -15,9 +15,9 @@ class Main extends React.Component {
         <Layout.Header>
           <Navbar />
         </Layout.Header>
-        <Layout.Content style={{padding: 40, margin: 0, minHeight: 800}}>
+        <Layout.Content style={{padding: 40, margin: 0, minHeight: 800 }}>
           <Row>
-            <Col>
+            <Col offset={4} span={16}>
               <Pages />
             </Col>
           </Row>
