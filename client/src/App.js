@@ -1,33 +1,16 @@
 import React from 'react'
-import { Layout, Row, Col } from 'antd'
-// import logo from './static/csesocwhiteblue.png'
-// import MainForm from './components/MainForm'
-import Navbar from './components/Navbar'
-import Main from './components/Main'
+import Main from './Main';    // original <App /> page
+import LoginPage from './components/Login';  // new <Login /> page
+import { Switch, Route, Redirect } from 'react-router-dom'
 
-import './styles/App.css'
-// <img alt="CSESoc logo" src={logo}/>
-
-class App extends React.Component {
-  render() {
+const App = () => {
     return (
-      <Layout>
-        <Layout.Header>
-          <Navbar />
-        </Layout.Header>
-        <Layout.Content style={{padding: 40, margin: 0, minHeight: 800}}>
-          <Row>
-            <Col offset={4} span={16}>
-              <Main />
-            </Col>
-          </Row>
-        </Layout.Content>
-        <Layout.Footer>
-          CSESoc 2018
-        </Layout.Footer>
-      </Layout>
+          <Switch>
+            <Route exact path="/app/mainform" component={Main} />
+            <Route path="/login" component={LoginPage} />
+            <Redirect path ="/login" />
+          </Switch>
     );
-  }
 }
 
 export default App
