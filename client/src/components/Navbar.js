@@ -12,9 +12,9 @@ const Navbar = () => (
         // defaultSelectedKeys={['2']}
         style={{ lineHeight: '64px' , width: '100%'}}
     >
-        <Menu.Item><Link to='/app/mainform'><img alt="CSESoc logo" src={logo}/></Link></Menu.Item>
-        <Menu.Item><Link to='/app/mainform'>Event-form</Link></Menu.Item>
-        <Menu.Item><Link to='/app/calendar'>Calendar</Link></Menu.Item>
+        <Menu.Item><Link to='/'><img alt="CSESoc logo" src={logo}/></Link></Menu.Item>
+        <Menu.Item><Link to='/'>Event-form</Link></Menu.Item>
+        <Menu.Item><Link to='/calendar'>Calendar</Link></Menu.Item>
         <Menu.Item style><Link to='/login'><Button type="primary">Logout</Button></Link></Menu.Item>
 
     </Menu>
