@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import { Button }from 'antd'
 
 

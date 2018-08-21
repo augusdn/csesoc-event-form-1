@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Form, Icon, Input, Button, message } from 'antd';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 import { Redirect } from 'react-router-dom'
 import fakeAuth from '../Auth'
 
@@ -29,7 +28,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-              if (values.userName === 'qiwei' && values.password === '1234') {
+              if (values.userName === user && values.password === pass) {
                   console.log('Received values of form: ', values);
                   message.success('This is a message of success');
                   fakeAuth.authenticate(() => {

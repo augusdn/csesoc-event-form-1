@@ -1,7 +1,6 @@
 import React from 'react'
 import Main from './Main';    // original <App /> page
 import LoginPage from './components/Login';  // new <Login /> page
-import MainForm from './components/MainForm';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import fakeAuth from './Auth'
 
@@ -26,10 +25,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
-
+    
   render() {
     return (
         <Switch>
