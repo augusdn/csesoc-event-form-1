@@ -11,7 +11,7 @@ const Navbar = () => (
         mode="horizontal"
         style={{ lineHeight: '64px' , width: '100%'}}
     >
-        <Menu.Item><Link to='/'><img alt="CSESoc logo" src={logo}/></Link></Menu.Item>
+        <Menu.Item disabled={true}><img alt="CSESoc logo" src={logo}/></Menu.Item>
         <Menu.Item><Link to='/'>Event-form</Link></Menu.Item>
         <Menu.Item><Link to='/calendar'>Calendar</Link></Menu.Item>
         <Menu.Item style><AuthButton/></Menu.Item>

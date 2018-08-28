@@ -58,6 +58,7 @@ class LoginForm extends React.Component {
       return (
 
         <Layout className="layout">
+
             <Content style={{padding: 40, margin: 0, minHeight: 800 }}>
 
               <Form className="login-form" style={{ margin: 'auto', width: 300, padding: 10 }}>
