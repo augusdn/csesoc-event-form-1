@@ -2,6 +2,11 @@ import React from 'react'
 import { renderEmail } from '../react-html-email'
 import CustomEmail from '../components/CustomEmail'
 
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
+const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+
 export const constructEmailMarketing = (details) => {
 	const recipient = details.cc
 	const htmlEmail = renderEmail(
@@ -28,6 +33,10 @@ export const constructEmailMarketing = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `MARKETING REQUEST: ${details.eventName}`,
@@ -60,6 +69,10 @@ export const constructEmailArcDelegate = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `ROOM BOOKING REQUEST: ${details.eventName}`,
@@ -92,6 +105,10 @@ export const constructEmailSecretary = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `NEW EVENT FOR SOC ANNOUNCE: ${details.eventName}`,
@@ -120,6 +137,10 @@ export const constructEmailTreasurer = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `NEW EVENT: ${details.eventName}`,
@@ -148,6 +169,10 @@ export const constructEmailSocials = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `SHOPPING LIST FOR: ${details.eventName}`,
@@ -178,6 +203,10 @@ export const constructEmailOrganiser = (details) => {
 		/>
 	)
 	const emailData = {
+		clientId: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
+		refreshToken: REFRESH_TOKEN,
+		accessToken: ACCESS_TOKEN,
 		recipient: recipient,
 		cc: details.cc,
 		subject: `NEW EVENT: ${details.eventName}`,

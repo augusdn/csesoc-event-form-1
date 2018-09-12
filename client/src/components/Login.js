@@ -1,11 +1,12 @@
 import React from 'react'
 import { Form, Icon, Input, Button, message } from 'antd';
+import { Menu }from 'antd'
+import logo from '../static/csesocwhiteblue.png'
 import { Layout } from 'antd';
 import { Redirect } from 'react-router-dom'
 import fakeAuth from '../Auth'
-
-import { Menu }from 'antd'
-import logo from '../static/csesocwhiteblue.png'
+const USER_ID = process.env.REACT_APP_USER_ID;
+const USER_PW = process.env.REACT_APP_USER_PW;
 
 message.config({
   duration: 0.4,
@@ -31,12 +32,17 @@ class LoginForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-              if (values.userName === user && values.password === pass) {
+              if (values.userName === USER_ID) {
                   console.log('Received values of form: ', values);
-                  message.success('This is a message of success');
-                  fakeAuth.authenticate(() => {
-                      this.setState({ fireRedirect: true });
-                  });
+                  if(values.password === USER_PW){
+                    message.success('This is a message of success');
+                    fakeAuth.authenticate(() => {
+                        this.setState({ fireRedirect: true });
+                    });
+                  } else {
+                    message.error('wrong password');
+                  }
+                  
               } else {
                   message.error('wrong username or password');
               }

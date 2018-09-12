@@ -19,15 +19,23 @@ app.use(express.static('client/build'));
 // });
 
 app.post('/api/send-emails/', (req, res) => {
-	let transporter  = nodemailer.createTransport({
-		service: 'gmail',
-		auth: {
-			user: 'events.form@csesoc.org.au',
-			pass: 'ninety9.60'
-		},
-	});
 
 	req.body.forEach(element => {
+		let transporter = nodemailer.createTransport({
+		    host: 'smtp.gmail.com',
+		    port: 465,
+		    secure: true,
+		    auth: {
+		        type: 'OAuth2',
+		        user: 'events.form@csesoc.org.au',
+		        clientId: element.clientId,
+		        clientSecret: element.clientSecret,
+		        refreshToken: element.refreshToken,
+		        accessToken: element.accessToken,
+		        expires: 1484314697598
+		    }
+		});
+		
 		let mailOptions = {
 			from: 'CSESoc Events <events.form@csesoc.org.au>',
 			to: element.recipient,

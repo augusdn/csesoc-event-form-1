@@ -10,7 +10,7 @@ import {
 	constructEmailSocials,
 	constructEmailOrganiser
 } from '../functions/EmailFunctions'
-import { createEvent } from '../functions/createEvent'
+//import { createEvent } from '../functions/createEvent'
 import '../styles/MainForm.css'
 
 const { Option } = Select
@@ -155,7 +155,7 @@ export default withFormik({
 	}),
 	handleSubmit(values, {resetForm}){
 		// make an event and send to google calendar:
-		createEvent(values);
+		//createEvent(values);
 
 		let cc = ''
 		if (values.portfolio === 'education') {
