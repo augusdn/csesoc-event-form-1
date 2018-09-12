@@ -37,8 +37,8 @@ export const constructEmailMarketing = (details) => {
 }
 
 export const constructEmailArcDelegate = (details) => {
-	// const recipient = `cseoc.arcdelegate@cse.unsw.edu.au`
-	const recipient = `yangqiwei97@gmail.com`
+	const recipient = `cseoc.arcdelegate@cse.unsw.edu.au`
+	// const recipient = `yangqiwei97@gmail.com`
 	const htmlEmail = renderEmail(
 		<CustomEmail
 			title={`ROOM BOOKING REQUEST: ${details.eventName}`}
@@ -69,8 +69,7 @@ export const constructEmailArcDelegate = (details) => {
 }
 
 export const constructEmailSecretary = (details) => {
-	// const recipient = `secretary@csesoc.org.au`
-	const recipient = `yangqiwei97@gmail.com`
+	const recipient = `secretary@csesoc.org.au`
 	const htmlEmail = renderEmail(
 		<CustomEmail
 			title={`NEW EVENT FOR SOC ANNOUNCE: ${details.eventName}`}
@@ -102,8 +101,7 @@ export const constructEmailSecretary = (details) => {
 }
 
 export const constructEmailTreasurer = (details) => {
-	// const recipient = `treasurer@csesoc.org.au`
-	const recipient = `yangqiwei97@gmail.com`
+	const recipient = `treasurer@csesoc.org.au`
 	const htmlEmail = renderEmail(
 		<CustomEmail
 			title={`NEW EVENT: ${details.eventName}`}
@@ -131,8 +129,7 @@ export const constructEmailTreasurer = (details) => {
 }
 
 export const constructEmailSocials = (details) => {
-	// const recipient = `social.events@csesoc.org.au`
-	const recipient = `yangqiwei97@gmail.com`
+	const recipient = `social.events@csesoc.org.au`
 	const htmlEmail = renderEmail(
 		<CustomEmail
 			title={`SHOPPING LIST FOR: ${details.eventName}`}
@@ -160,8 +157,7 @@ export const constructEmailSocials = (details) => {
 }
 
 export const constructEmailOrganiser = (details) => {
-	// const recipient = details.organiserEmail
-	const recipient = `yangqiwei97@gmail.com`
+	const recipient = details.organiserEmail
 	const htmlEmail = renderEmail(
 		<CustomEmail
 			title={`NEW EVENT: ${details.eventName}`}

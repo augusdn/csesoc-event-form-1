@@ -10,6 +10,7 @@ import {
 	constructEmailSocials,
 	constructEmailOrganiser
 } from '../functions/EmailFunctions'
+import { createEvent } from '../functions/createEvent'
 import '../styles/MainForm.css'
 
 const { Option } = Select
@@ -153,9 +154,10 @@ export default withFormik({
 		location: Yup.string().required('Event location required'),
 	}),
 	handleSubmit(values, {resetForm}){
-		// let cc = ''
-		let cc = 'yangqiwei97@gmail.com'
+		// make an event and send to google calendar:
+		createEvent(values);
 
+		let cc = ''
 		if (values.portfolio === 'education') {
 			cc = `marketing@csesoc.org.au`
 		} else {

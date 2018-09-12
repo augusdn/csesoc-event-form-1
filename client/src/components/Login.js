@@ -4,6 +4,9 @@ import { Layout } from 'antd';
 import { Redirect } from 'react-router-dom'
 import fakeAuth from '../Auth'
 
+import { Menu }from 'antd'
+import logo from '../static/csesocwhiteblue.png'
+
 message.config({
   duration: 0.4,
   maxCount: 1,
@@ -58,13 +61,23 @@ class LoginForm extends React.Component {
       return (
 
         <Layout className="layout">
+            <Layout.Header>
+                <Menu
+                    theme="dark"
+                    mode="horizontal"
+                    style={{ lineHeight: '64px' , width: '100%'}}
+                >
+                    <Menu.Item disabled={true}><img alt="CSESoc logo" src={logo}/></Menu.Item>
+
+                </Menu>
+            </Layout.Header>
 
             <Content style={{padding: 40, margin: 0, minHeight: 800 }}>
 
               <Form className="login-form" style={{ margin: 'auto', width: 300, padding: 10 }}>
                 <FormItem>
                   {getFieldDecorator('userName', {
-                    rules: [{ required: true, message: 'Please input your username!' }],
+                    rules: [{ required: true, message: 'Please input your Username!' }],
                   })(
                     <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
                   )}
