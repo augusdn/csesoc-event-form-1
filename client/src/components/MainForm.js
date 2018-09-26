@@ -10,10 +10,8 @@ import {
 	constructEmailSocials,
 	constructEmailOrganiser
 } from '../functions/EmailFunctions'
-import { createEvent } from '../functions/createEvent'
 import '../styles/MainForm.css'
-import { insertEvent } from '../functions/insertEvent'
-
+import insertEvent from '../functions/insertEvent'
 const { Option } = Select
 
 const MainForm = (props) => {
@@ -163,10 +161,6 @@ export default withFormik({
 		}
 		const finalDetails = Object.assign({}, values, {cc: cc});
 
-		// make an event and send to google calendar
-		const eventss = createEvent(finalDetails);
-		insertEvent(eventss);
-
 		let emailData = []
 		emailData.push(constructEmailMarketing(finalDetails))
 		emailData.push(constructEmailSecretary(finalDetails))
@@ -185,5 +179,28 @@ export default withFormik({
 			resetForm()
 			alert("Emails successfully sent")
 		})
+
+
+		// make an event and send to google calendar
+		var event = {
+		  'summary': finalDetails.eventName,
+		  'location': finalDetails.location,
+		  'description': finalDetails.description + '\nPricing' + finalDetails.pricing,
+		  'start': {
+		    "date": finalDetails.date,
+		    //"dateTime": details.start,
+		  },
+		  'end': {
+		    "date": finalDetails.date,
+		    //"dateTime": details.end,
+		  },
+		  'organizer': {
+		    "email": finalDetails.organiserEmail,
+		    "displayName": finalDetails.organiser,
+		  },
+		  'htmlLink': finalDetails.links,
+		};
+		console.log(event);
+		insertEvent.runSample(event);
 	}
 })(MainForm)
